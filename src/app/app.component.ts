@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, HostBinding} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Abhilash';
+  darkMode: boolean = true
+
+  @HostBinding('class.dark') get mode() {
+    return this.darkMode
+  }
+
+  toggleMode(){
+    this.darkMode = !this.darkMode
+  }
 }
