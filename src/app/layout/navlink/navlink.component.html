@@ -1,7 +1,7 @@
 <a
   class="block px-5 py-1.5 hover:bg-gray-200/70 hover:dark:bg-zinc-700 transition-all rounded-full text-sm sm:text-base dark:text-white"
   [routerLink]="href"
-  [routerLinkActive]="['hover:bg-gray-200','bg-gray-200','dark:bg-zinc-700']"
+  [routerLinkActive]="['hover:bg-gray-200','bg-gray-200',button ? '' :'dark:bg-zinc-700']"
   [routerLinkActiveOptions]="{exact:true}"
   [ngClass]="{'bg-indigo-600 hover:bg-indigo-700 dark:bg-zinc-700 hover:dark:bg-indigo-700 text-white rounded-md':button}"
 >

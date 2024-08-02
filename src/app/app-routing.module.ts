@@ -4,6 +4,7 @@ import {HomeComponent} from "./pages/home/home.component";
 import {AboutComponent} from "./pages/about/about.component";
 import {ContactComponent} from "./pages/contact/contact.component";
 import {BlogModule} from "./blog/blog.module";
+import {NotFoundComponent} from "./pages/error/not-found/not-found.component";
 
 const routes: Routes = [
   {
@@ -27,7 +28,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '',
+    component: NotFoundComponent
   },
 ];
 

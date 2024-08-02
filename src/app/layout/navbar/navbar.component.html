@@ -1,16 +1,23 @@
 <nav
-  class="bg-neutral-50 dark:bg-neutral-800 w-full shadow py-2 px-4 flex flex-col gap-y-3 transition-all sm:flex-row
+  class="bg-neutral-50 fixed dark:bg-neutral-800 w-full shadow py-2 px-4 flex flex-col gap-y-3 transition-all sm:flex-row
   sm:items-center sm:justify-between md:py-3 md:px-5">
-  <div class="flex justify-between items-center">
-    <a routerLink="/" class="text-lg roboto-black w-10 aspect-square rounded-full bg-red-500 block"></a>
-    <div class="w-6 aspect-square bg-red-500 sm:hidden"></div>
+  <div class="flex flex-col gap-3 sm:flex-row">
+    <div class="flex items-center justify-between w-full px-3">
+      <a routerLink="/" class="text-lg roboto-black w-10 aspect-square rounded-full bg-red-500 block"></a>
+      <div class="w-6 aspect-square bg-red-500 sm:hidden"></div>
+    </div>
+    <div class="flex flex-col sm:flex-row sm:items-center font-semibold gap-1">
+      <app-navlink href="/" label="Home"/>
+      <app-navlink href="/about" label="About"/>
+      <app-navlink href="/blog" label="Blog"/>
+      <app-navlink href="/contact" label="Contact"/>
+    </div>
   </div>
-  <div class="sm:flex sm:items-center font-semibold gap-x-3">
-    <app-navlink href="/" label="Home"/>
-    <app-navlink href="/about" label="About"/>
-    <app-navlink href="/blog" label="Blog"/>
-    <app-navlink href="/contact" label="Contact"/>
+  <div class="flex justify-between items-center py-2 sm:items-center font-semibold gap-x-3">
     <app-navlink href="/auth/login" label="Login" button/>
-    <button (click)="toggleMode()">Dark</button>
+    <button (click)="toggleMode()" class="text-xl flex items-center">
+      <ng-icon name="lucideMoon" *ngIf="!darkMode" color="#000"/>
+      <ng-icon name="lucideSun" *ngIf="darkMode" color="#fff"/>
+    </button>
   </div>
 </nav>
