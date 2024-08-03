@@ -11,7 +11,10 @@ import {ContactComponent} from './pages/contact/contact.component';
 
 import {NgIconsModule} from '@ng-icons/core';
 import {lucideSun, lucideMoon} from "@ng-icons/lucide";
-import { NotFoundComponent } from './pages/error/not-found/not-found.component'
+import {NotFoundComponent} from './pages/error/not-found/not-found.component'
+import {provideAnimationsAsync} from "@angular/platform-browser/animations/async";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -25,10 +28,12 @@ import { NotFoundComponent } from './pages/error/not-found/not-found.component'
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     NgIconsModule.withIcons({lucideSun, lucideMoon}),
+    NgOptimizedImage,
   ],
-  providers: [],
+  providers: [provideAnimationsAsync(),],
   bootstrap: [AppComponent]
 })
 export class AppModule {
